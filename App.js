@@ -1,28 +1,26 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
-
-const Stack = createNativeStackNavigator();
+import { View, Text, StyleSheet } from 'react-native';
+import Router from './src/__mokcs__/Router'
+import {useFonts} from 'expo-font'
 
 function App() {
+  const loaded = useFonts({
+    text: require('./src/assets/fonts/Poppins-Regular.ttf'),
+    bold: require('./src/assets/fonts/Poppins-Bold.ttf'),
+  })
+  if(!loaded) {
+    return null
+  }
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Router />
   );
 }
+
+const styles = StyleSheet.create({
+  text: {fontFamily: 'text'},
+  bold: {fontFamily: 'bold'}
+})
 
 export default App;
