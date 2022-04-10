@@ -5,7 +5,7 @@ const global = StyleSheet.create({
     flex: 1,
     paddingLeft: 20,
     paddingRight: 20,
-    paddingTop: 20,
+    paddingTop: 40,
     paddingBottom: 20,
   },
   text: { fontFamily: 'text' },

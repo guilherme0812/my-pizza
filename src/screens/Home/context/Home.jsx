@@ -3,13 +3,16 @@ import React, { createContext, useState, useContext } from "react";
 const HomeContext = createContext();
 
 export default function HomeProvider({ children }) {
-  const [count, setCount] = useState(0);
+  const [name, setName] = useState('Alexandre');
+  const [cardMessage, setMessageCard] = useState('Toda terça entrega Free')
 
   return (
     <HomeContext.Provider
       value={{
-        count,
-        setCount
+        name,
+        setName,
+        cardMessage,
+        setMessageCard
       }}
     >
       {children}
@@ -18,8 +21,8 @@ export default function HomeProvider({ children }) {
 }
 
 export function useHome() {
-  const context = useContext(CountContext);
+  const context = useContext(HomeContext);
   if (!context) throw new Error("useCount must be used within a CountProvider");
-  const { count, setCount } = context;
-  return { count, setCount };
+  const { name, setName, cardMessage, setMessageCard } = context;
+  return { name, setName, cardMessage, setMessageCard };
 }
