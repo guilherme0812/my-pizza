@@ -8,13 +8,8 @@ const global = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 20,
   },
-  text: {
-    fontFamily: 'text'
-  },
-  bold: {
-    fontFamily: 'bold'
-  },
-
+  text: { fontFamily: 'text' },
+  bold: { fontFamily: 'bold' },
   textXs: {fontSize: 10},
   textSm: {fontSize: 12},
   textBase: {fontSize: 14},
