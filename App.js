@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Router from './src/__mokcs__/Router'
+import Router from './src/navigation/Router';
 import { useFonts } from 'expo-font'
 
 function App() {
