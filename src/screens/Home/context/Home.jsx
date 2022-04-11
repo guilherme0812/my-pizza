@@ -5,6 +5,7 @@ const HomeContext = createContext();
 export default function HomeProvider({ children }) {
   const [name, setName] = useState('Alexandre');
   const [cardMessage, setMessageCard] = useState('Toda terça entrega Free')
+  const [cartItens, setCartItens] = useState(0)
 
   return (
     <HomeContext.Provider
@@ -12,7 +13,9 @@ export default function HomeProvider({ children }) {
         name,
         setName,
         cardMessage,
-        setMessageCard
+        setMessageCard,
+        cartItens, 
+        setCartItens
       }}
     >
       {children}
@@ -23,6 +26,6 @@ export default function HomeProvider({ children }) {
 export function useHome() {
   const context = useContext(HomeContext);
   if (!context) throw new Error("useCount must be used within a CountProvider");
-  const { name, setName, cardMessage, setMessageCard } = context;
-  return { name, setName, cardMessage, setMessageCard };
+  const { name, setName, cardMessage, setMessageCard, cartItens, setCartItens } = context;
+  return { name, setName, cardMessage, setMessageCard, cartItens, setCartItens };
 }

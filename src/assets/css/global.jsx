@@ -8,6 +8,9 @@ const global = StyleSheet.create({
     paddingTop: 40,
     paddingBottom: 20,
   },
+  verticalAlign: {
+    justifyContent: 'space-between',
+  },
   text: { fontFamily: 'text' },
   bold: { fontFamily: 'bold' },
   textXs: {fontSize: 10},

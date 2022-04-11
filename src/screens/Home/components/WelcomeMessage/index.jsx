@@ -7,7 +7,7 @@ const WelcomeMessage = () => {
   const {name} = useHome()
   return (
     <View>
-      <Text style={[styles.textXl, styles.bold, styles.welcomeTitle]}>Olaaaa, {name}</Text>
+      <Text style={[styles.textXl, styles.bold, styles.welcomeTitle]}>Olá, {name}</Text>
       <Text style={[styles.text3Xl, styles.bold, styles.orderPizzaTitle]}>Peça sua pizza</Text>
     </View>
   )
