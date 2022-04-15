@@ -2,11 +2,10 @@ import React from 'react';
 import { View, Text } from 'react-native'
 import styles from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { connect } from 'react-redux'
 import { colors } from "../../../../assets/css"
-import { useHome } from '../../context/Home';
 
-const Tutorial = () => {
-  const {cartItens} = useHome()
+const Navbar = ({cartItens}) => {
   return (
     <View style={styles.navbarContainer}>
       <View style={[styles.iconMenuContainer]}>
@@ -20,4 +19,7 @@ const Tutorial = () => {
     </View>
   )
 }
-export default Tutorial
+const mapStateToProps = store => ({
+  cartItens: store.CountCartReducer.value
+})
+export default connect(mapStateToProps)(Navbar)

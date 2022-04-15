@@ -2,6 +2,8 @@
 
 import * as React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import store from './src/config/store';
+import { Provider } from 'react-redux';
 import Router from './src/navigation/Router';
 import { useFonts } from 'expo-font'
 
@@ -11,9 +13,12 @@ function App() {
     bold: require('./src/assets/fonts/Poppins-Bold.ttf'),
   })
 
+  console.log(store.getState())
   return (
     <>
-      {loaded ? <Router /> : null}
+      <Provider store={store}>
+        {loaded ? <Router /> : null}
+      </Provider>
     </>
   );
 }

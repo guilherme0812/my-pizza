@@ -3,9 +3,14 @@ import {global, colors} from "../../assets/css";
 
 const styles = StyleSheet.create({  
     ...global,
-    welcomeContainer: {
-      justifyContent: "flex-end",
-      backgroundColor: '#E85D04'
+    navbarContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      paddingTop: 20,
+      paddingBottom: 20,
+    },
+    navbarTitle: {
+      color: colors.black2
     }
 });
 export default styles;

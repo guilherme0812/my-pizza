@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   optionContainer: {
-    marginBottom: 20
+    marginBottom: 20,
   },
   optionItensContainer: {
     flexDirection: "row",
@@ -19,8 +19,12 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     width: 90,
     height: 90,
-    marginRight: 20,
     borderRadius: 10,
+    elevation: 5,
+    padding: 20,
+    marginBottom: 10,
+    marginTop: 10,
+    marginRight: 20,
   },
   shadowProp: {
     shadowColor: '#000',

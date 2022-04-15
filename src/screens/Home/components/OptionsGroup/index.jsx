@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native'
 import styles from './styles';
-import { useHome } from '../../context/Home';
 
 const OptionGroup = ({navigation}) => {
   return (
@@ -9,7 +8,7 @@ const OptionGroup = ({navigation}) => {
       <Text style={[styles.bold, styles.textXl, styles.optionsTitle]}> Opções </Text>
       <View>
 
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scrollView}>
 
           <TouchableOpacity style={[styles.optionItem, styles.shadowProp]} onPress={() => navigation.navigate('OrderPizza')} >
             <Image
