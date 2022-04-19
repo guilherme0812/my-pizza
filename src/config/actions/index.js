@@ -1,4 +1,4 @@
-import {CHANGE_USER, LOGOUT} from './actionTypes'
+import {CHANGE_USER, LOGOUT, COUNT_CART_ACTION} from './actionTypes'
 
 // Actions
 export function changeUser(user) {
@@ -13,5 +13,12 @@ export function logout() {
   return {
     type: LOGOUT,
     info: "Logout the current user",
+  }
+}
+
+export function countcartAction(value) {
+  return {
+    type: COUNT_CART_ACTION,
+    payload: value
   }
 }
