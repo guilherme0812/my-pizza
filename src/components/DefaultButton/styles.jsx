@@ -3,15 +3,15 @@ import {global, colors} from "../../assets/css";
 
 const styles = StyleSheet.create({  
     ...global,
-    infoProductText: {
+    defaultButton: {
         textAlign: 'center',
-        color: colors.black3,
-        marginBottom: -5
+        alignItems: 'center',
+        padding: 10,
+        backgroundColor: colors.orange1,
+        borderRadius: 10
     },
-    pizzaContainer: {
-        paddingTop: 50,
-        paddingBottom: 50,
-        alignItems: 'center'
+    defaultButtonText: {
+        color: colors.white
     }
 });
 export default styles;

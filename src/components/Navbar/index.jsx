@@ -4,9 +4,16 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 
 const Navbar = (props) => {
-  const { navigation, target, title = 'Selecione o título', leftButtonName = 'chevron-back-outline', rightButtonName } = props
-  const rightButton = rightButtonName && <Icon name={rightButtonName} size={25} />
-  
+  const { 
+    navigation,
+    target,
+    title = 'Selecione o título',
+    leftButtonName = 'chevron-back-outline',
+    rightButtonName 
+  } = props
+
+  const rightButton = rightButtonName? <Icon name={rightButtonName} size={25} /> : <View style={{marginRight:25}}></View>
+
   return (
     <View style={styles.navbarContainer}>
       <TouchableOpacity onPress={() => navigation.navigate(target)}>
@@ -18,6 +25,7 @@ const Navbar = (props) => {
       </View>
 
       <View>
+
         {rightButton}
       </View>
     </View>
