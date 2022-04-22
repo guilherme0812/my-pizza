@@ -7,6 +7,7 @@ const global = StyleSheet.create({
     paddingRight: 20,
     paddingTop: 40,
     paddingBottom: 20,
+    backgroundColor: '#fff'
   },
   verticalAlign: {
     justifyContent: 'space-between',
