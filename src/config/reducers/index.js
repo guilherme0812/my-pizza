@@ -1,7 +1,12 @@
 import { combineReducers } from "redux";
 import UserReducer from "./userReducer";
 import CountCartReducer from './countCartReducer'
+import FlavorsReducer from "./flavors/flavorsReducer";
 
-const Reducer = combineReducers({UserReducer, CountCartReducer})
+const RootReducer = combineReducers({
+  UserReducer,
+  CountCartReducer,
+  flavors: FlavorsReducer,
+})
 
-export default Reducer
+export default RootReducer

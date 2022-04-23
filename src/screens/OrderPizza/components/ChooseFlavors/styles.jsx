@@ -6,8 +6,8 @@ const styles = StyleSheet.create({
   ...global,
   select: {
     padding: 10,
-    borderBottomWidth: 4,
-    borderColor: colors.black3
+    borderBottomWidth: 2,
+    borderColor: '#ccc',
   },
 })
 export default styles
