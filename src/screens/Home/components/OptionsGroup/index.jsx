@@ -16,23 +16,23 @@ const OptionGroup = ({navigation}) => {
             />
             <Text style={[styles.text, styles.item, styles.textSm]}>Pizza</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.optionItem, styles.shadowProp]}>
+          <TouchableOpacity style={[styles.optionItem, styles.shadowProp]} onPress={() => navigation.navigate('OrderDrink')}>
             <Image
               source={require('../../../../assets/icons/cup-drink.png')}
             />
-            <Text style={[styles.text, styles.item, styles.textSm]}>Pizza</Text>
+            <Text style={[styles.text, styles.item, styles.textSm]}>Bebida</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.optionItem, styles.shadowProp]}>
             <Image
               source={require('../../../../assets/icons/order.png')}
             />
-            <Text style={[styles.text, styles.item, styles.textSm]}>Pizza</Text>
+            <Text style={[styles.text, styles.item, styles.textSm]}>Pedido</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.optionItem, styles.shadowProp]}>
             <Image
               source={require('../../../../assets/icons/chat.png')}
             />
-            <Text style={[styles.text, styles.item, styles.textSm]}>Pizza</Text>
+            <Text style={[styles.text, styles.item, styles.textSm]}>Chat</Text>
           </TouchableOpacity>
         </ScrollView>
       </View>
