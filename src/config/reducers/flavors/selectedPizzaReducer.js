@@ -1,7 +1,10 @@
-import { COUNT_CART_ACTION, ADD_FLAVOR } from "../../actions/actionTypes"
+import { ADD_FLAVOR, CHANGE_PRICE, CHANGE_SIZE } from "../../actions/actionTypes"
 
 const initialState = {
-  size: '',
+  size: {
+    id: "",
+    description: "Tamanho da pizza" 
+  },
   flavors: [],
   price: 0
 }
@@ -15,10 +18,18 @@ const SelectedPizzaReducer = (state = initialState, action) => {
         ...state,
         flavors: newFlavors
       }
-    case 'CHANGE_PRICE':
+    case CHANGE_PRICE:
       return {
         ...state,
         price: action.payload.value
+      }
+    case CHANGE_SIZE:
+      return {
+        ...state,
+        size: {
+          id: action.payload.id,
+          description: action.payload.description
+        }
       }
     default:
       return state
