@@ -13,7 +13,7 @@ function App() {
     bold: require('./src/assets/fonts/Poppins-Bold.ttf'),
   })
 
-  console.log(store.getState())
+  // console.log(store.getState())
   return (
     <>
       <Provider store={store}>

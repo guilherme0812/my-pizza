@@ -11,8 +11,6 @@ const OrderPizza = ({ navigation, text = 'text' }) => {
 
     const selectedPizza = useSelector(state => state.selectedPizza)
 
-    const dispatch = useDispatch()
-
     const handleFinish = () => {
         Alert.alert('Essa função ainda não está dispinível')
     }
@@ -30,9 +28,6 @@ const OrderPizza = ({ navigation, text = 'text' }) => {
                 </Text>
             </View>
 
-            <View>
-                {selectedPizza.flavors.map((d, index) => <Text key={index}>{d}</Text>)}
-            </View>
             <View style={styles.pizzaContainer}>
                 <Image source={require('../../assets/images/vector-pizza.png')} />
             </View>

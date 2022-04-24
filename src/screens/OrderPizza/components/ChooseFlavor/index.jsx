@@ -11,7 +11,7 @@ const ChooseFlavor = ({index}) => {
   const dispatch = useDispatch()
 
   const handleChangeFlavor = value => {
-    console.log(value)
+    // console.log(value)
     dispatch({type: ADD_FLAVOR, payload: {flavor: value, index: index}})
   }
 
