@@ -1,5 +1,5 @@
 import react, { useState, useEffect } from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, Alert } from 'react-native'
 import styles from './styles'
 import Navbar from '../../components/Navbar'
 import DefaultButton from '../../components/DefaultButton'
@@ -14,7 +14,7 @@ const OrderPizza = ({ navigation, text = 'text' }) => {
     const dispatch = useDispatch()
 
     const handleFinish = () => {
-        dispatch({ type: 'CHANGE_PRICE', payload: { value: 30 } })
+        Alert.alert('Essa função ainda não está dispinível')
     }
 
     return (
