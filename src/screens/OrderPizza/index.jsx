@@ -5,9 +5,11 @@ import Navbar from '../../components/Navbar'
 import ChooseFlavors from './components/ChooseFlavors'
 import Radio from '../../components/Radio'
 import DefaultButton from '../../components/DefaultButton'
+import Select from '../../components/Select'
+import ChooseFlavor from './components/ChooseFlavor'
 
 const OrderPizza = ({ navigation, text = 'text' }) => {
-    const [fistFlavor, setFirstFlavor] = useState([])
+    const [flavor, setFlavor] = useState([])
     const [selected, setSelected] = useState(1)
 
     return (
@@ -22,9 +24,9 @@ const OrderPizza = ({ navigation, text = 'text' }) => {
             </View>
 
             <View>
-                <ChooseFlavors data={fistFlavor} setData={setFirstFlavor} index={0} />
-                <ChooseFlavors data={fistFlavor} setData={setFirstFlavor} index={1}/>
-                <ChooseFlavors data={fistFlavor} setData={setFirstFlavor} index={2}/>
+                <ChooseFlavor data={flavor} setData={setFlavor} index={0}/>
+                <ChooseFlavor data={flavor} setData={setFlavor} index={1}/>
+                <ChooseFlavor data={flavor} setData={setFlavor} index={2}/>
             </View>
 
             <Radio

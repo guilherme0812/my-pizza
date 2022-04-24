@@ -2,22 +2,25 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Dimensions, ScrollView} from 'react-native'
 import styles from './styles';
 
-const width = Dimensions.get('window').width
-const height = Dimensions.get('window').height
-const options = ["Calabresa", "4 Queijos", "Portuguesa", "Peperoni", "Bacon", "Vegetariana", "6 Quiejos", "Frango com queijo", "Milho", "Especial"]
-
-const SelectModal = ({handleModalVisibility, setData}) => {
+const SelectModal = ({
+  handleModalVisibility, 
+  setData, 
+  list,
+  value,
+  key
+}) => {
+  
   const onPressItem = (option) => {
     handleModalVisibility(false)
     setData(option)
   }
-  const option = options.map( (option, index) => (
+  const option = list.map( (option, index) => (
     <TouchableOpacity
       style={styles.option}
       key={index}
-      onPress={() => onPressItem(option)}
+      onPress={() => onPressItem(option[value])}
     >
-      <Text style={[styles.bold, styles.textBase, styles.optionText]}> {option} </Text>
+      <Text style={[styles.bold, styles.textBase, styles.optionText]}> {option[value]} </Text>
     </TouchableOpacity>
   ))
   return(
