@@ -7,7 +7,6 @@ import {countcartAction} from '../../../../config/actions'
 import { colors } from "../../../../assets/css"
 
 const Navbar = ({cartItens, countcartAction}) => {
-  console.log()
   return (
     <View style={styles.navbarContainer}>
       <TouchableOpacity style={[styles.iconMenuContainer]}>

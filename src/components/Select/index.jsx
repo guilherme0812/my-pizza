@@ -22,7 +22,7 @@ const Select = ({
     data[index] = value
     setData(dataArray)
   }
-  console.log(data)
+  // console.log(data)
   return (
     <View>
       <TouchableOpacity
