@@ -29,7 +29,7 @@ const Select = ({
         style={styles.select}
         onPress={() => handleModalVisibility(true)}
       >
-        <Text style={[styles.text, styles.textOption, styles.textLg]}> {data[index]? data[index] : placeholder} </Text>
+        <Text style={[styles.text, styles.textOption, styles.textLg]}> {data? data : placeholder} </Text>
       </TouchableOpacity>
 
       <Modal
@@ -38,7 +38,7 @@ const Select = ({
         visible={isModalVisible}
         onRequestClose={() => handleModalVisibility(false)}
       >
-        <SelectModal {...{ handleModalVisibility, list, value }} setData={pushToIndex}  />
+        <SelectModal {...{ handleModalVisibility, list, value }} setData={setData}  />
       </Modal>
 
     </View>

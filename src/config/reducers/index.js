@@ -2,13 +2,13 @@ import { combineReducers } from "redux";
 import UserReducer from "./userReducer";
 import CountCartReducer from './countCartReducer'
 import FlavorsReducer from "./flavors/flavorsReducer";
-import selectedFlavorsReducer from "./flavors/selectedFlavorsReducer";
+import SelectedPizzaReducer from "./flavors/selectedPizzaReducer";
 
 const RootReducer = combineReducers({
   UserReducer,
   CountCartReducer,
   flavors: FlavorsReducer,
-  selectedFlavors: selectedFlavorsReducer
+  selectedPizza: SelectedPizzaReducer
 })
 
 export default RootReducer

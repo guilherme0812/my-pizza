@@ -25,7 +25,7 @@ export function countcartAction(value) {
 
 export function addFlavor(flavor, index) {
   return {
-    type: COUNT_CART_ACTION,
+    type: ADD_FLAVOR,
     payload: {flavor, index}
   }
 }
