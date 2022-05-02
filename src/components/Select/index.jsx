@@ -6,11 +6,11 @@ import styles from './styles';
 const Select = ({
   data,
   setData,
-  index,
+  index=0,
   placeholder='Selecione...',
   list=[],
   value='descricao',
-  key,
+  key=undefined
 }) => {
   const [isModalVisible, setIsModalVisible] = useState(false)
 
