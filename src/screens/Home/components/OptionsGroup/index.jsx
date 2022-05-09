@@ -22,7 +22,7 @@ const OptionGroup = ({navigation}) => {
             />
             <Text style={[styles.text, styles.item, styles.textSm]}>Bebida</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.optionItem, styles.shadowProp]}>
+          <TouchableOpacity style={[styles.optionItem, styles.shadowProp]} onPress={() => navigation.navigate('Orders')}>
             <Image
               source={require('../../../../assets/icons/order.png')}
             />

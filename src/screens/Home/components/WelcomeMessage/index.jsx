@@ -1,20 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text} from 'react-native'
-import { useHome } from '../../context/Home';
 import styles from './styles';
-import { connect } from 'react-redux';
+import {  useSelector, useDispatch } from 'react-redux';
+import { getUsers } from '../../../../config/actions/user';
+import { usersApi } from '../../../../service/api';
 
-const WelcomeMessage = ({userName}) => {
-  const {name} = useHome()
+const WelcomeMessage = () => {
+  const [user, setUser] = useState([])
+
+  const dispatch = useDispatch()
+  const userName = useSelector(state => state.UserReducer)
+
   return (
     <View>
-      <Text style={[styles.textXl, styles.bold, styles.welcomeTitle]}>Olá, {userName}</Text>
+      <Text style={[styles.textXl, styles.bold, styles.welcomeTitle]}>Olá, {userName?.nome}</Text>
       <Text style={[styles.text3Xl, styles.bold, styles.orderPizzaTitle]}>Peça sua pizza</Text>
     </View>
   )
 }
-const mapStateToProps = store => ({
-  userName: store.UserReducer.user
-})
 
-export default connect(mapStateToProps)(WelcomeMessage)
+export default WelcomeMessage

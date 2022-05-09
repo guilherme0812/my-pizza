@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import UserReducer from "./userReducer";
 import CountCartReducer from './countCartReducer'
 import FlavorsReducer from "./flavors/flavorsReducer";
 import SelectedPizzaReducer from "./flavors/selectedPizzaReducer";
+import UserReducer from "./user/userReducer";
 
 const RootReducer = combineReducers({
   UserReducer,
