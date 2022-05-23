@@ -1,5 +1,5 @@
 import { ADD_FLAVORS } from "../actionTypes";
-import { flavorsApi } from "../../../service/api";
+import { api } from "../../../service/api";
 import axios from "axios";
 
 export const addFlavors = (flavors) => {
@@ -11,7 +11,7 @@ export const addFlavors = (flavors) => {
 
 export const getFlavors = () => {
   return dispatch => {
-    flavorsApi.get('api/orders')
+    api.get('api/flavors')
       .then(response => dispatch(addFlavors(response.data)) )
       .catch(console.log)
   }

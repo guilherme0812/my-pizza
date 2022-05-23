@@ -2,7 +2,7 @@ import React from 'react';
 import Select from '../../../../components/Select';
 import { useSelector, useDispatch } from 'react-redux';
 import { ADD_FLAVOR } from '../../../../config/actions/actionTypes';
-
+import store from '../../../../config/store'
 
 const ChooseFlavor = ({index}) => {
   const flavorsList = useSelector(state => state.flavors)
@@ -11,7 +11,6 @@ const ChooseFlavor = ({index}) => {
   const dispatch = useDispatch()
 
   const handleChangeFlavor = value => {
-    // console.log(value)
     dispatch({type: ADD_FLAVOR, payload: {flavor: value, index: index}})
   }
 
@@ -22,7 +21,7 @@ const ChooseFlavor = ({index}) => {
       index={index}
       placeholder="Selecione um sabor..."
       list={flavorsList}
-      value={'Flavor'}
+      value={'description'}
       key={undefined}
     />
   )

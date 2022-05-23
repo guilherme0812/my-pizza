@@ -1,5 +1,5 @@
 import { CHANGE_USER } from "../actionTypes";
-import { usersApi } from "../../../service/api";
+import { api } from "../../../service/api";
 
 export const changeUser = (payload) => {
   return {
@@ -10,7 +10,7 @@ export const changeUser = (payload) => {
 
 export const getUsers = () => {
   return dispatch => {
-    usersApi({
+    api({
       method: "get",
       url: "api/users",
     }).then( response => dispatch(changeUser(response.data)));

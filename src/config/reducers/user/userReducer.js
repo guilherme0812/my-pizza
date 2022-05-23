@@ -8,7 +8,7 @@ const UserReducer = (state = initialState, action) => {
       console.log(action.payload[0])
       return {
         ...initialState,
-        nome: action.payload[0].nome,
+        nome: action.payload[0].name,
         email: action.payload[0].email
       }
     default:
