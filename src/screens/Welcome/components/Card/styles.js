@@ -1,3 +1,23 @@
+import styled from 'styled-components/native'
+
+export const CardContainer = styled.View`
+  padding: 20px 40px;
+  border-radius: 15px;
+  background-color: #fff;
+  margin: 18px;
+`
+
+export const Title = styled.Text`
+  text-align: center;
+  font-family: bold;
+  font-size: 25px;
+`
+
+export const Description = styled.Text`
+  font-family: text;
+  text-align: center;
+`
+
 import { StyleSheet } from "react-native";
 import { global, colors } from "../../../../assets/css"
 

@@ -9,10 +9,6 @@ const RadioGroup = ({ index }) => {
   const [selected, setSelected] = useState()
   const dispatch = useDispatch()
 
-  useEffect(() => {
-
-  }, [selected]);
-
   const options = [
     { id: "001", descricao: 'Pizza gigante', size: '55 cm', price: 35, slices: "16 fatias", },
     { id: "002", descricao: 'Pizza grande', size: '45 cm', price: 30, slices: "12 fatias", },
