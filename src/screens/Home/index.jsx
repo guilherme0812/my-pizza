@@ -7,17 +7,18 @@ import OptionGroup from './components/OptionsGroup'
 import Tutorial from './components/Tutorial'
 import Navbar from './components/Navbar'
 import styles from './styles'
+import { Container } from './styles'
 
 const Home = ({ navigation }) => {
     return (
         <HomeProvider>
-            <View style={[styles.container, styles.verticalAlign, styles.homeContainer]}>
+            <Container>
                 <Navbar />
                 <WelcomeMessage />
                 <NoticeCard />
                 <OptionGroup navigation={navigation} />
                 <Tutorial />
-            </View>
+            </Container>
         </HomeProvider>
     )
 }
