@@ -10,7 +10,6 @@ const Welcome = ({ navigation }) => {
   return (
     <Container>
       <Card navigation={navigation} />
-      <Text size={25}>Meu teste</Text>
     </Container>
   )
 }

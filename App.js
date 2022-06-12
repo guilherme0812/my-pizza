@@ -6,6 +6,8 @@ import store from './src/config/store';
 import { Provider } from 'react-redux';
 import Router from './src/navigation/Router';
 import { useFonts } from 'expo-font'
+import { ThemeProvider } from 'styled-components/native'
+import light from './src/theme/light';
 
 function App() {
   const [loaded] = useFonts({
@@ -17,7 +19,9 @@ function App() {
   return (
     <>
       <Provider store={store}>
-        {loaded ? <Router /> : null}
+        <ThemeProvider theme={light}>
+          {loaded ? <Router /> : null}
+        </ThemeProvider>
       </Provider>
     </>
   );

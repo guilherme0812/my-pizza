@@ -1,15 +1,19 @@
 import styled from 'styled-components/native'
 
 export const CardContainer = styled.View`
-  padding: 20px 40px;
+  padding-left: ${({theme}) => theme.padding}px;
+  padding-right: ${({theme}) => theme.padding}px;
+  padding-top: ${({theme}) => theme.padding * 2}px;
+  padding-bottom: ${({theme}) => theme.padding * 2}px;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: ${({theme}) => theme.background};
   margin: 18px;
 `
 
 export const Title = styled.Text`
   text-align: center;
   font-family: bold;
+  color: ${({theme}) => theme.black3};
   font-size: 25px;
 `
 
