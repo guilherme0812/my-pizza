@@ -1,29 +1,26 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native'
-import styles from './styles';
+import { Container, IconMenu, CartContainer, Counter } from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { connect } from 'react-redux'
-import {countcartAction} from '../../../../config/actions'
+import { countcartAction } from '../../../../config/actions'
 import { colors } from "../../../../assets/css"
+import { useSelector, useDispatch } from 'react-redux'
 
-const Navbar = ({cartItens, countcartAction}) => {
+const Navbar = () => {
+  const dispatch = useDispatch()
+  const countValue = useSelector(state => state.CountCartReducer.value)
+
   return (
-    <View style={styles.navbarContainer}>
-      <TouchableOpacity style={[styles.iconMenuContainer]}>
+    <Container>
+      <IconMenu>
         <Icon name="menu" size={30} color={colors.black3} />
-      </TouchableOpacity>
+      </IconMenu>
 
-      <TouchableOpacity style={styles.cartContainer} onPress={() => countcartAction(1)}>
-        <Text style={[styles.itensCount, styles.text]}>{cartItens}</Text>
+      <CartContainer onPress={() => dispatch(countcartAction(1))}>
+        <Counter>{countValue}</Counter>
         <Icon name="cart-outline" size={30} color={colors.black3} />
-      </TouchableOpacity>
-    </View>
+      </CartContainer>
+    </Container>
   )
 }
-const mapStateToProps = store => ({
-  cartItens: store.CountCartReducer.value
-})
-const mapDispatchToProps = (dispatch) => ({
-  countcartAction: (value) => dispatch( countcartAction(value) )
-})
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
+
+export default Navbar
