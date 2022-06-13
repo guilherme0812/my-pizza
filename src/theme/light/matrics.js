@@ -1,3 +1,4 @@
 export const matrics = {
-  padding: 16
+  padding: 16,
+  fontSize: 12,
 }
