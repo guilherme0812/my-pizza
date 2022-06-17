@@ -1,34 +1,33 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
-import styles from './styles';
+import { Container, Title } from './styles';
 
 const Navbar = (props) => {
-  const { 
+  const {
     navigation,
     target,
     title = 'Selecione o título',
     leftButtonName = 'chevron-back-outline',
-    rightButtonName 
+    rightButtonName
   } = props
 
-  const rightButton = rightButtonName? <Icon name={rightButtonName} size={25} /> : <View style={{marginRight:25}}></View>
+  const rightButton = rightButtonName ? <Icon name={rightButtonName} size={25} /> : <View style={{ marginRight: 25 }}></View>
 
   return (
-    <View style={styles.navbarContainer}>
+    <Container>
       <TouchableOpacity onPress={() => navigation.navigate(target)}>
         <Icon name="chevron-back-outline" size={25} />
       </TouchableOpacity>
 
       <View>
-        <Text style={[styles.bold, styles.textXl, styles.navbarTitle]}> {title} </Text>
+        <Title>{title}</Title>
       </View>
 
       <View>
-
         {rightButton}
       </View>
-    </View>
+    </Container>
   )
 }
 

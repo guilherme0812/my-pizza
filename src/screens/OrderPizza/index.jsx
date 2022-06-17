@@ -1,6 +1,6 @@
 import react, { useState, useEffect } from 'react'
 import { View, Text, Image, Alert } from 'react-native'
-import styles from './styles'
+import styles, {Container} from './styles'
 import Navbar from '../../components/Navbar'
 import DefaultButton from '../../components/DefaultButton'
 import { useSelector, useDispatch } from 'react-redux';
@@ -16,7 +16,7 @@ const OrderPizza = ({ navigation, text = 'text' }) => {
     }
 
     return (
-        <View style={[styles.container, styles.verticalAlign]}>
+        <Container>
             <Navbar navigation={navigation} title="Selecione a pizza" target='Home' />
 
             <View>
@@ -36,7 +36,7 @@ const OrderPizza = ({ navigation, text = 'text' }) => {
             <RadioGroup />
 
             <DefaultButton title="Adicionar ao pedido" message="Esta função ainda não está pronta" handleOnclick={handleFinish} />
-        </View>
+        </Container>
     )
 }
 
