@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native'
-import styles from './styles';
+import styles, { Title } from './styles';
 import { useHome } from '../../context/Home';
 
 const Navbar = () => {
   return (
-    <View>
-      <Text style={[styles.bold, styles.textXl, styles.TutorialTitle]}> Aprenda à usar o app </Text>
+    <View style={{marginBottom: 20}}>
+      <Title> Aprenda à usar o app </Title>
       <View style={styles.videoContainer}>
         <Image
           source={require('../../../../assets/icons/video-icon.png')}
