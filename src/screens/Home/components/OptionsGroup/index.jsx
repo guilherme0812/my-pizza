@@ -1,46 +1,31 @@
 import React from 'react';
-import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native'
-import styles, { Container, Title } from './styles';
+import { FlatList } from 'react-native'
+import { Container, Title, List } from './styles';
 import Card from '../Card';
 
 const OptionGroup = ({ navigation }) => {
   const data = [
-    { key: '1', to: "OrderPizza", text: "Pizza", image: require('../../../../assets/icons/slice-pizza.png') }
+    { key: '1', to: "OrderPizza", text: "Pizza", image: require('../../../../assets/icons/slice-pizza.png') },
+    { key: '2', to: "OrderDrink", text: "Bebida", image: require('../../../../assets/icons/cup-drink.png') },
+    { key: '3', to: "Orders", text: "Pedido", image: require('../../../../assets/icons/order.png') },
+    { key: '4', to: "Orders", text: "Chat", image: require('../../../../assets/icons/chat.png') },
   ]
+  const renderItem = ({ item }) => (
+    <Card navigation={navigation} to={item.to} text={item.text} image={item.image} />
+  )
 
   return (
     <Container>
       <Title> Opções </Title>
 
-      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+      <List
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={item => item.key}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+      />
 
-        <Card navigation={navigation} to="OrderPizza" text="Pizza" image={require('../../../../assets/icons/slice-pizza.png')} />
-
-        <TouchableOpacity style={[styles.optionItem, styles.shadowProp]} onPress={() => navigation.navigate('OrderPizza')} >
-          <Image
-            source={require('../../../../assets/icons/slice-pizza.png')}
-          />
-          <Text style={[styles.text, styles.item, styles.textSm]}>Pizza</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.optionItem, styles.shadowProp]} onPress={() => navigation.navigate('OrderDrink')}>
-          <Image
-            source={require('../../../../assets/icons/cup-drink.png')}
-          />
-          <Text style={[styles.text, styles.item, styles.textSm]}>Bebida</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.optionItem, styles.shadowProp]} onPress={() => navigation.navigate('Orders')}>
-          <Image
-            source={require('../../../../assets/icons/order.png')}
-          />
-          <Text style={[styles.text, styles.item, styles.textSm]}>Pedido</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.optionItem, styles.shadowProp]}>
-          <Image
-            source={require('../../../../assets/icons/chat.png')}
-          />
-          <Text style={[styles.text, styles.item, styles.textSm]}>Chat</Text>
-        </TouchableOpacity>
-      </ScrollView>
     </Container>
   )
 }

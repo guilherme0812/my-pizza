@@ -15,6 +15,10 @@ export const Title = styled(Text).attrs(props => ({
   margin-left: ${({theme}) => theme.padding}px;
 `
 
+export const List = styled.FlatList`
+  height: 120px;
+`
+
 const styles = StyleSheet.create({
   ...global,
   optionsTitle: {

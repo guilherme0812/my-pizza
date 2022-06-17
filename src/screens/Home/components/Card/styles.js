@@ -9,7 +9,6 @@ export const Container = styled.TouchableOpacity`
   border-radius: 10px;
   padding: ${({theme}) => theme.padding}px;
   margin-top: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-left: ${({theme}) => theme.padding}px;
   elevation: 5;
 `
