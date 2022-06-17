@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const Navbar = () => {
   const dispatch = useDispatch()
-  const countValue = useSelector(state => state.CountCartReducer.value)
+  const counterValue = useSelector(state => state.CountCartReducer.value)
 
   return (
     <Container>
@@ -16,7 +16,7 @@ const Navbar = () => {
       </IconMenu>
 
       <CartContainer onPress={() => dispatch(countcartAction(1))}>
-        <Counter>{countValue}</Counter>
+        <Counter>{counterValue}</Counter>
         <Icon name="cart-outline" size={30} color={colors.black3} />
       </CartContainer>
     </Container>
