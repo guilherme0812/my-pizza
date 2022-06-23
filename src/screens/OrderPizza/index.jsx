@@ -1,6 +1,6 @@
 import react, { useState, useEffect } from 'react'
 import { View, Text, Image, Alert } from 'react-native'
-import styles, {Container} from './styles'
+import styles, {Container, Title, Price, ImagePizzaContainer} from './styles'
 import Navbar from '../../components/Navbar'
 import DefaultButton from '../../components/DefaultButton'
 import { useSelector, useDispatch } from 'react-redux';
@@ -20,17 +20,17 @@ const OrderPizza = ({ navigation, text = 'text' }) => {
             <Navbar navigation={navigation} title="Selecione a pizza" target='Home' />
 
             <View>
-                <Text style={[styles.textXl, styles.bold, styles.infoProductText]}>
+                <Title>
                     {selectedPizza.size.description}
-                </Text>
-                <Text style={[styles.textXl, styles.bold, styles.infoProductText]}>
+                </Title>
+                <Price>
                     R$ {selectedPizza.price},00
-                </Text>
+                </Price>
             </View>
 
-            <View style={styles.pizzaContainer}>
+            <ImagePizzaContainer>
                 <Image source={require('../../assets/images/vector-pizza.png')} />
-            </View>
+            </ImagePizzaContainer>
 
             <SelectGroup />
             <RadioGroup />
