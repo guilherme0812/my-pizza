@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native'
-import styles from './styles';
+import styles, {Title, Price} from './styles';
 
 const ProductInfo = () => {
   return (
     <View>
-      <Text style={[styles.textXl, styles.bold, styles.infoProductText]}>Refrigerante 1.5L</Text>
-      <Text style={[styles.textXl, styles.bold, styles.infoProductText]}>R$ 8,00</Text>
+      <Title>Refrigerante 1.5L</Title>
+      <Price>R$ 8,00</Price>
     </View>
   )
 }

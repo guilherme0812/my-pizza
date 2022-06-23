@@ -1,7 +1,6 @@
-import { StyleSheet } from "react-native";
-import {global, colors} from "../../../../assets/css";
+import styled from 'styled-components/native'
 
-const styles = StyleSheet.create({  
-    ...global,
-});
-export default styles;
+export const Container = styled.View`
+    margin-left: ${({theme}) => theme.padding}px;
+    margin-right: ${({theme}) => theme.padding}px;
+`

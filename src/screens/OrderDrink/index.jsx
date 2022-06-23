@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Image, Alert } from 'react-native'
+import { Image, Alert } from 'react-native'
 import Navbar from '../../components/Navbar'
 import DefaultButton from '../../components/DefaultButton'
 import ProductInfo from './components/ProductInfo';
 import ChooseDrink from './components/ChooseDrink'
-import styles from './styles';
+import { Container, ImageDrinkContainer, ButtonContainer } from './styles';
 
 const OrderDrink = ({ navigation }) => {
   const handleFinish = () => {
@@ -12,16 +12,19 @@ const OrderDrink = ({ navigation }) => {
   }
 
   return (
-    <View style={[styles.container, styles.verticalAlign]}>
+    <Container>
       <Navbar navigation={navigation} title="Selecione a bebida" target='Home' />
       <ProductInfo />
 
-      <View style={styles.pizzaContainer}>
+      <ImageDrinkContainer>
         <Image source={require('../../assets/images/soda.png')} />
-      </View>
+      </ImageDrinkContainer>
       <ChooseDrink />
-      <DefaultButton title="Adicionar ao pedido" message="Esta função ainda não está pronta" handleOnclick={handleFinish} />
-    </View>
+
+      <ButtonContainer>
+        <DefaultButton title="Adicionar ao pedido" message="Esta função ainda não está pronta" handleOnclick={handleFinish} />
+      </ButtonContainer>
+    </Container>
   )
 }
 export default OrderDrink

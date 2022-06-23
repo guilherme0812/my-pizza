@@ -3,7 +3,7 @@ import {Text} from '../../components'
 
 export const Container = styled.View`
   margin: ${({theme}) => theme.padding}px;
-  margin-top: ${({theme}) => theme.padding * 2}px;
+  margin-top: ${({theme}) => theme.padding * 3}px;
   flex-direction: row;
   justify-content: space-between;
 `

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, ScrollView } from 'react-native'
 import Radio from '../../../../components/Radio';
-import styles from './styles';
+import styles, {Container, ScrollContainer} from './styles';
 import { useDispatch } from 'react-redux';
 import { CHANGE_PRICE, CHANGE_SIZE } from '../../../../config/actions/actionTypes';
 
@@ -24,8 +24,8 @@ const RadioGroup = ({ index }) => {
   }
 
   return (
-    <View style={styles.radioGroupContainer}>
-      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scroolContainer}>
+    <Container>
+      <ScrollContainer horizontal={true} showsHorizontalScrollIndicator={false} style={styles.scroolContainer}>
         <Radio
           selected={selected}
           option={options}
@@ -33,8 +33,8 @@ const RadioGroup = ({ index }) => {
           onChangeSelect={handleSelect}
           value="slices"
         />
-      </ScrollView>
-    </View>
+      </ScrollContainer>
+    </Container>
   )
 }
 export default RadioGroup

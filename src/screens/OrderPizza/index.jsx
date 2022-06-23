@@ -1,6 +1,6 @@
 import react, { useState, useEffect } from 'react'
 import { View, Text, Image, Alert } from 'react-native'
-import styles, {Container, Title, Price, ImagePizzaContainer} from './styles'
+import { Container, Title, Price, ImagePizzaContainer, ButtonContainer } from './styles'
 import Navbar from '../../components/Navbar'
 import DefaultButton from '../../components/DefaultButton'
 import { useSelector, useDispatch } from 'react-redux';
@@ -35,7 +35,9 @@ const OrderPizza = ({ navigation, text = 'text' }) => {
             <SelectGroup />
             <RadioGroup />
 
-            <DefaultButton title="Adicionar ao pedido" message="Esta função ainda não está pronta" handleOnclick={handleFinish} />
+            <ButtonContainer>
+                <DefaultButton title="Adicionar ao pedido" message="Esta função ainda não está pronta" handleOnclick={handleFinish} />
+            </ButtonContainer>
         </Container>
     )
 }
