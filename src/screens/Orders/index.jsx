@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar'
 import DefaultButton from '../../components/DefaultButton'
 import PizzaItem from './components/PizzaItem';
 import PagamentInfo from './components/PagamentInfo';
-import styles from './styles';
+import {Container, ButtonContainer, CardContainer} from './styles';
 
 const Orders = ({ navigation }) => {
   const handleFinish = () => {
@@ -12,18 +12,18 @@ const Orders = ({ navigation }) => {
   }
 
   return (
-    <View style={[styles.container, styles.verticalAlign]}>
+    <Container>
       <Navbar navigation={navigation} title="Seus pedidos" target='Home' />
 
-      <View>
+      <CardContainer>
         <PizzaItem />
         <PizzaItem />
-      </View>
-      <View>
+      </CardContainer>
+      <ButtonContainer>
         <PagamentInfo />
         <DefaultButton title="Finalizar pedido" handleOnclick={handleFinish} />
-      </View>
-    </View>
+      </ButtonContainer>
+    </Container>
   )
 }
 export default Orders

@@ -1,21 +1,35 @@
-import { StyleSheet } from "react-native";
-import { global, colors } from "../../../../assets/css";
+import styled from 'styled-components/native'
+import { Text } from "../../../../components";
 
-const styles = StyleSheet.create({
-    ...global,
-    orderItem: {
-        flexDirection: 'row',
-        borderRadius: 20,
-        paddingRight: 20,
-        paddingLeft: 20,
-        paddingTop: 20,
-        paddingBottom: 20,
-        backgroundColor: '#f7f7f7',
-        marginBottom: 15
-    },
-    contentContainer: {
-        marginLeft: 20
-    },
-    priceColor: {color: colors.orange1}
-});
-export default styles;
+export const Container = styled.View.attrs(props => ({
+    elevation: 8
+  }))`
+    flex-direction: row;
+    border-radius: 20px;
+    padding: ${({theme}) => theme.padding}px;
+    background-color: ${({theme}) => theme.white2};
+    margin-bottom: ${({theme}) => theme.padding}px;
+`
+export const ContentContainer = styled.View`
+    margin-left: ${({theme}) => theme.padding}px;
+`
+
+export const Title = styled(Text).attrs(props => ({
+    bold: true,
+    size: "4"
+  }))`
+    color: ${({theme}) => theme.black4};
+`
+
+export const Flavor = styled(Text).attrs(props => ({
+    size: "3"
+  }))`
+    color: ${({theme}) => theme.black5};
+`
+
+export const Price = styled(Text).attrs(props => ({
+    bold: true,
+    size: "4"
+  }))`
+    color: ${({theme}) => theme.primary};
+`

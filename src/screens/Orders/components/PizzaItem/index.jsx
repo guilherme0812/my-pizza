@@ -1,19 +1,19 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native'
-import styles from './styles';
+import {Container, ContentContainer, Title, Flavor, Price} from './styles';
 
 const PizzaItem = () => {
   return (
-    <View style={styles.orderItem}>
+    <Container>
       <View>
         <Image source={require('../../../../assets/images/vector-pizza.png')} style={{ width: 80, height: 80 }} />
       </View>
-      <View style={styles.contentContainer}>
-        <Text style={[styles.bold, styles.textXl]}>Pizza Grande</Text>
-        <Text style={[styles.text, styles.flavorsText]}>Calabresa, 4 queijos</Text>
-        <Text style={[styles.bold, styles.textXl, styles.priceColor]}>R$ 30</Text>
-      </View>
-    </View>
+      <ContentContainer>
+        <Title>Pizza Grande</Title>
+        <Flavor>Calabresa, 4 queijos</Flavor>
+        <Price>R$ 30</Price>
+      </ContentContainer>
+    </Container>
   )
 }
 export default PizzaItem
