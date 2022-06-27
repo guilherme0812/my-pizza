@@ -1,19 +1,19 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native'
-import styles from './styles';
+import { TouchableOpacity } from 'react-native'
+import { Container, Price, PagamentText } from './styles';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const PagamentInfo = () => {
   return (
-    <View style={styles.PagamentInfoContainer}>
-      <View>
-        <Text style={[styles.bold, styles.textXl]}>R$ 60</Text>
-      </View>
-      <View style={styles.contentContainer}>
-        <TouchableOpacity>
-          <Text style={[styles.text, styles.textSl]}>métodos de pagamento</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    <Container>
+      <Price>R$ 60</Price>
+      <TouchableOpacity>
+        <PagamentText>
+          métodos de pagamento
+          <Icon name="caret-down" size={15} />
+        </PagamentText>
+      </TouchableOpacity>
+    </Container>
   )
 }
 export default PagamentInfo
