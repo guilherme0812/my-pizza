@@ -1,5 +1,3 @@
-import { StyleSheet } from "react-native";
-import { global, colors } from "../../../../assets/css";
 import styled from 'styled-components/native'
 import { Text } from "../../../../components";
 
@@ -20,12 +18,3 @@ export const PagamentText = styled(Text).attrs(props => ({
   }))`
     color: ${({theme}) => theme.black4};
 `
-
-const styles = StyleSheet.create({
-    ...global,
-    PagamentInfoContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between'
-    },
-});
-export default styles;

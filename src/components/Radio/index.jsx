@@ -1,31 +1,31 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native'
-import styles from './styles';
+import { View } from 'react-native'
+import styles, { RadioContainer, RadioTouchable, Circle } from './styles';
+import Text from '../Text'
 
 const Radio = ({
-  option=[],
-  horizontal=true,
+  option = [],
+  horizontal = true,
   onChangeSelect,
   selected,
-  value="descricao"
+  value = "descricao"
 }) => {
-  const horizontalStyle = horizontal? 'row' : 'column'
+  const horizontalStyle = horizontal ? 'row' : 'column'
 
-  return(
-    <View style={{flexDirection: horizontalStyle, justifyContent: 'center'}}>
-      {option.map( (opt, index) => (
-        <TouchableOpacity
-          style={styles.optionContainer}
+  return (
+    <RadioContainer {...{horizontalStyle}}>
+      {option.map((opt, index) => (
+        <RadioTouchable
           onPress={() => onChangeSelect(index, opt)}
           key={index}
         >
-          <View style={styles.outlineCircle}>
+          <Circle>
             {selected == index && <View style={styles.innerCircle}></View>}
-          </View>
-          <Text style={styles.text}>{opt[value]}</Text>
-        </TouchableOpacity>
+          </Circle>
+          <Text size="3">{opt[value]}</Text>
+        </RadioTouchable>
       ))}
-    </View>
+    </RadioContainer>
   )
 }
 export default Radio
