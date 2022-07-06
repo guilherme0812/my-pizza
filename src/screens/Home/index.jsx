@@ -1,5 +1,4 @@
 import react from 'react'
-import { View, Text } from 'react-native'
 import HomeProvider from './context/Home'
 import WelcomeMessage from './components/WelcomeMessage'
 import NoticeCard from './components/NoticeCard'

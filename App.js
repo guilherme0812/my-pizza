@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import Router from './src/navigation/Router';
 import { useFonts } from 'expo-font'
 import { ThemeProvider } from 'styled-components/native'
+import { PizzaContextProvider } from './src/config/pizzacontext';
 import light from './src/theme/light';
 
 function App() {
@@ -18,11 +19,13 @@ function App() {
   // console.log(store.getState())
   return (
     <>
-      <Provider store={store}>
-        <ThemeProvider theme={light}>
-          {loaded ? <Router /> : null}
-        </ThemeProvider>
-      </Provider>
+      <PizzaContextProvider>
+        <Provider store={store}>
+          <ThemeProvider theme={light}>
+            {loaded ? <Router /> : null}
+          </ThemeProvider>
+        </Provider>
+      </PizzaContextProvider>
     </>
   );
 }
