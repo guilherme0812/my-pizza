@@ -16,7 +16,7 @@ const Radio = ({
     <RadioContainer {...{horizontalStyle}}>
       {option.map((opt, index) => (
         <RadioTouchable
-          onPress={() => onChangeSelect(index, opt)}
+          onPress={() => onChangeSelect(opt)}
           key={index}
         >
           <Circle>

@@ -3,10 +3,10 @@ import {View, Text, TouchableOpacity, Dimensions, ScrollView} from 'react-native
 import styles from './styles';
 
 const SelectModal = ({
-  handleModalVisibility, 
-  setData, 
-  list,
-  value,
+  data,
+  setData,
+  description,
+  handleModalVisibility,
   key
 }) => {
   
@@ -14,20 +14,22 @@ const SelectModal = ({
     handleModalVisibility(false)
     setData(option)
   }
-  const option = list.map( (option, index) => (
+  
+  const options = data.map( (option, index) => (
     <TouchableOpacity
       style={styles.option}
       key={index}
-      onPress={() => onPressItem(option[value])}
+      onPress={() => onPressItem(option)}
     >
-      <Text style={[styles.bold, styles.textBase, styles.optionText]}> {option[value]} </Text>
+      <Text style={[styles.bold, styles.textBase, styles.optionText]}> {option[description]} </Text>
     </TouchableOpacity>
   ))
+
   return(
     <TouchableOpacity onPress={() => handleModalVisibility(false)} style={[styles.container]}>
       <View style={[styles.modal]}>
         <ScrollView>
-          {option}
+          {options}
         </ScrollView>
       </View>
     </TouchableOpacity>

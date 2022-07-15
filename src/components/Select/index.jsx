@@ -6,30 +6,25 @@ import styles from './styles';
 const Select = ({
   data,
   setData,
-  index=0,
+  description="descricao",
+  value="id",
+  initialValue,
   placeholder='Selecione...',
-  list=[],
-  value='descricao',
-  key=undefined
 }) => {
   const [isModalVisible, setIsModalVisible] = useState(false)
 
   const handleModalVisibility = (bool) => {
     setIsModalVisible(bool)
   }
-  const pushToIndex = (value) => {
-    let dataArray = data
-    data[index] = value
-    setData(dataArray)
-  }
-  // console.log(data)
+  console.log(initialValue && initialValue[description])
+
   return (
     <View>
       <TouchableOpacity
         style={styles.select}
         onPress={() => handleModalVisibility(true)}
       >
-        <Text style={[styles.text, styles.textOption, styles.textLg]}> {data? data : placeholder} </Text>
+        <Text style={[styles.text, styles.textOption, styles.textLg]}> {initialValue ? initialValue[description] :placeholder} </Text>
       </TouchableOpacity>
 
       <Modal
@@ -38,7 +33,12 @@ const Select = ({
         visible={isModalVisible}
         onRequestClose={() => handleModalVisibility(false)}
       >
-        <SelectModal {...{ handleModalVisibility, list, value }} setData={setData}  />
+        <SelectModal
+          handleModalVisibility={handleModalVisibility}
+          data={data}
+          setData={setData}
+          description={description}
+        />
       </Modal>
 
     </View>

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { View, ScrollView } from 'react-native'
 import Radio from '../../../../components/Radio';
-import styles, {Container, ScrollContainer} from './styles';
+import styles, { Container, ScrollContainer } from './styles';
 import { useDispatch } from 'react-redux';
 import { CHANGE_PRICE, CHANGE_SIZE } from '../../../../config/actions/actionTypes';
+import { usePizzaContext } from '../../../../config/pizzacontext';
 
 const RadioGroup = ({ index }) => {
+  const { sizeSelected, setSizeSelected } = usePizzaContext()
+
   const [selected, setSelected] = useState()
   const dispatch = useDispatch()
 
@@ -17,10 +20,8 @@ const RadioGroup = ({ index }) => {
     { id: "005", descricao: 'Pizza broto', size: '20 cm', price: 18, slices: "4 fatias", },
   ]
 
-  const handleSelect = (index, option) => {
-    setSelected(index)
-    dispatch({ type: CHANGE_PRICE, payload: { value: option.price } })
-    dispatch({ type: CHANGE_SIZE, payload: { id: option.id, description: option.descricao } })
+  const handleSelect = (option) => {
+    setSizeSelected(option)
   }
 
   return (
