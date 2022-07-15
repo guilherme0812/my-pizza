@@ -16,7 +16,6 @@ const Select = ({
   const handleModalVisibility = (bool) => {
     setIsModalVisible(bool)
   }
-  console.log(initialValue && initialValue[description])
 
   return (
     <View>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native'
-import styles, { RadioContainer, RadioTouchable, Circle } from './styles';
+import styles, { RadioContainer, RadioTouchable, Circle, InnerCircle } from './styles';
 import Text from '../Text'
 
 const Radio = ({
@@ -20,7 +20,7 @@ const Radio = ({
           key={index}
         >
           <Circle>
-            {selected == index && <View style={styles.innerCircle}></View>}
+            {selected == index && <InnerCircle />}
           </Circle>
           <Text size="3">{opt[value]}</Text>
         </RadioTouchable>

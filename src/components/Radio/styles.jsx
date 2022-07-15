@@ -24,6 +24,13 @@ export const Circle = styled.View`
     border-color: ${({theme}) => colors.black4};
 `
 
+export const InnerCircle = styled.View`
+    border-radius: 10px;
+    height: 7px;
+    width: 7px;
+    background-color: ${({theme}) => colors.black4};
+`
+
 // export const Description = styled(Text).attrs(props => ({
 //     size: "3"
 //   }))`

@@ -7,7 +7,7 @@ import { CHANGE_PRICE, CHANGE_SIZE } from '../../../../config/actions/actionType
 import { usePizzaContext } from '../../../../config/pizzacontext';
 
 const RadioGroup = ({ index }) => {
-  const { sizeSelected, setSizeSelected } = usePizzaContext()
+  const { setSizeSelected } = usePizzaContext()
 
   const [selected, setSelected] = useState()
   const dispatch = useDispatch()
@@ -21,6 +21,7 @@ const RadioGroup = ({ index }) => {
   ]
 
   const handleSelect = (option) => {
+    setSelected( options.findIndex(d => d.id === option.id))
     setSizeSelected(option)
   }
 

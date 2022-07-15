@@ -4,10 +4,10 @@ import constate from "constate"
 const pizzacontext = () => {
   const [count, setCount] = useState(0)
   const [sizeSelected, setSizeSelected] = useState()
+  const [flavorsSelected, setFlavorsSelected] = useState([])
 
-  console.log("selected: ", sizeSelected)
   return {
-    sizeSelected, setSizeSelected, count
+    sizeSelected, setSizeSelected, flavorsSelected, setFlavorsSelected, count
   }
 }
 

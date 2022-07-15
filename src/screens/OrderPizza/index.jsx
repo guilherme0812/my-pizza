@@ -6,8 +6,10 @@ import DefaultButton from '../../components/DefaultButton'
 import { useSelector, useDispatch } from 'react-redux';
 import SelectGroup from './components/SelectGroup'
 import RadioGroup from './components/RadioGroup'
+import { usePizzaContext } from '../../config/pizzacontext'
 
 const OrderPizza = ({ navigation, text = 'text' }) => {
+    const { sizeSelected } = usePizzaContext()
 
     const selectedPizza = useSelector(state => state.selectedPizza)
 
@@ -21,10 +23,10 @@ const OrderPizza = ({ navigation, text = 'text' }) => {
 
             <View>
                 <Title>
-                    {selectedPizza.size.description}
+                    {sizeSelected?.id ? sizeSelected?.descricao : 'Tamanho da pizza'}
                 </Title>
                 <Price>
-                    R$ {selectedPizza.price},00
+                    R$ { sizeSelected?.id ? sizeSelected?.price : '0'},00
                 </Price>
             </View>
 

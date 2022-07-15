@@ -1,27 +1,35 @@
 import React, {useState} from 'react';
 import Select from '../../../../components/Select';
-import { useSelector, useDispatch } from 'react-redux';
-import { ADD_FLAVOR } from '../../../../config/actions/actionTypes';
-import store from '../../../../config/store'
+import { usePizzaContext } from '../../../../config/pizzacontext';
 
 const ChooseFlavor = ({ index }) => {
-  // const flavorsList = useSelector(state => state.flavors)
-  // const selectedFlavor = useSelector(state => state.selectedPizza.flavors[index])
-  const [selectedFlavor, setSelectedFlavor] = useState()
+  const {flavorsSelected, setFlavorsSelected} = usePizzaContext()
+  const [flavorSelected, setFlavorSelected] = useState()
 
   const data = [{ id: '001', descricao: 'Calabresa', 'type': 1 }, { id: '002', descricao: 'Portuguesa', 'type': 1 },]
 
-  const dispatch = useDispatch()
-
   const handleChangeFlavor = value => {
-    setSelectedFlavor(value)
+
+    const existsRecordInner = flavorsSelected.some(flavor => flavor.id === value.id)
+    // if (flavorsSelected.length === 0) {
+    //   setFlavorsSelected([value])
+    // } else {
+    //   console.log(flavorsSelected.some(flavor => flavor.id === value.id))
+    // }
+    if (!existsRecordInner) {
+      setFlavorsSelected([...flavorsSelected, value])
+      setFlavorSelected(value)
+    } else {
+      alert("Sabor já selecionado")
+    }
   }
+  console.log(flavorsSelected)
 
   return (
     <Select
       data={data}
       setData={handleChangeFlavor}
-      initialValue={selectedFlavor}
+      initialValue={flavorSelected}
       placeholder="Selecione um sabor..."
       description='descricao'
       value="id"
