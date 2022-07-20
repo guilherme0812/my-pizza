@@ -11,11 +11,6 @@ const ChooseFlavor = ({ index }) => {
   const handleChangeFlavor = value => {
 
     const existsRecordInner = flavorsSelected.some(flavor => flavor.id === value.id)
-    // if (flavorsSelected.length === 0) {
-    //   setFlavorsSelected([value])
-    // } else {
-    //   console.log(flavorsSelected.some(flavor => flavor.id === value.id))
-    // }
     if (!existsRecordInner) {
       setFlavorsSelected([...flavorsSelected, value])
       setFlavorSelected(value)
@@ -23,7 +18,7 @@ const ChooseFlavor = ({ index }) => {
       alert("Sabor já selecionado")
     }
   }
-  console.log(flavorsSelected)
+  // console.log(flavorsSelected)
 
   return (
     <Select

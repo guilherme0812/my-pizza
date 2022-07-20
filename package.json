@@ -29,7 +29,8 @@
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
     "style-component": "^0.0.1",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "@react-native-async-storage/async-storage": "~1.15.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

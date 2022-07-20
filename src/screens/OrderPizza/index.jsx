@@ -9,12 +9,16 @@ import RadioGroup from './components/RadioGroup'
 import { usePizzaContext } from '../../config/pizzacontext'
 
 const OrderPizza = ({ navigation, text = 'text' }) => {
-    const { sizeSelected } = usePizzaContext()
+    const { sizeSelected, flavorsSelected,  handleSelectPizza } = usePizzaContext()
 
     const selectedPizza = useSelector(state => state.selectedPizza)
 
     const handleFinish = () => {
-        Alert.alert('Essa função ainda não está dispinível')
+        if (sizeSelected && flavorsSelected.length > 0) {
+            handleSelectPizza()
+        } else {
+            Alert.alert('É necessário inserir ao menos um sabor e preencher o tamanho da pizza')
+        }
     }
 
     return (
